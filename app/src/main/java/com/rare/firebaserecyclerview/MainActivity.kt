@@ -76,11 +76,10 @@ class MainActivity : AppCompatActivity(), RecyclerInterface {
 
                 if(userlist != null){
                     var index = -1
-                     index = detail.indexOfFirst { element-> element.name.equals(userlist.name) && (element.rollNo?.equals(userlist.rollNo) == true) }
-                    detail.indexOf(userlist)
+                    index = detail.indexOfFirst { element-> element.reference.equals(userlist.reference) }
 
                     if(index>-1)
-                    detail.set(index, userlist)
+                    detail.set( index, userlist)
                 }
                 adapter.notifyDataSetChanged()
             }
@@ -91,7 +90,7 @@ class MainActivity : AppCompatActivity(), RecyclerInterface {
 
                 if(userlist != null){
                     var index = -1
-                    index = detail.indexOfFirst { element-> element.name.equals(userlist.name) && (element.rollNo?.equals(userlist.rollNo) == true) }
+                    index = detail.indexOfFirst { element-> element.reference.equals(userlist.reference)  }
                     if(index>-1)
                         detail.removeAt(index)
                 }
